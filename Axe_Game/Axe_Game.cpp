@@ -6,7 +6,7 @@ int main()
 	int height = 450;
 	int width = 800;
 
-	InitWindow(width, height, "Khalil");
+	InitWindow(width, height, "Axe Game");
 
 	// Load the icon image
 	Image icon = LoadImage("Icon.png"); // Make sure you have an icon.png in your project directory
@@ -55,7 +55,7 @@ int main()
 		{
 			//Begin Game logic
 
-			//update edges cricle and axe
+			// Update edges cricle and axe
 			l_circle_x = circle_x - circle_radius;
 			r_circle_x = circle_x + circle_radius;
 			u_circle_y = circle_y - circle_radius;
@@ -65,28 +65,33 @@ int main()
 			r_Axe_x = axe_x + axe_length;
 			u_Axe_y = axe_y;
 			b_Axe_y = axe_y + axe_length;
-			// Update collision with axe 
+
+			// Update collision detection check between axe and circle
 			collision_with_axe = 
 				(l_Axe_x <= r_circle_x) &&
 				(r_Axe_x >= l_circle_x) &&
 				(u_Axe_y <= b_circle_y) &&
 				(b_Axe_y >= u_circle_y);
 
+			// Draw Shapes
 			DrawCircle(circle_x, circle_y, circle_radius, BLUE);
 			DrawRectangle(axe_x, axe_y, axe_length, axe_length, RED);
-			//Input AND moving Circle Left and Right
+
+			//Input and moving Circle Left and Right
 			if (IsKeyDown(KEY_D) && circle_x < width) {
 				circle_x += 10;
 			}
 			if (IsKeyDown(KEY_A) && circle_x > 0) {
 				circle_x -= 10;
 			}
-			// Axe falling down
+
+			// Axe going up and down
 			axe_y += axe_direction;
 			if (axe_y > height || axe_y < 0)
 			{
 				axe_direction = -axe_direction;
 			}
+
 			//End Game logic
 		}
 
