@@ -29,13 +29,18 @@ int main()
 	int axe_x{ 400 };
 	int axe_y{ 0 };
 	int axe_length{ 50 };
-	int axe_direction{ 10 };
+	int axe_direction{ 5 };
 	// Axe Edges
 	int l_Axe_x{ axe_x };
 	int r_Axe_x{ axe_x + axe_length };
 	int u_Axe_y{ axe_y };
 	int b_Axe_y{ axe_y + axe_length };
-	bool collision_with_axe{ false };
+
+	bool collision_with_axe = 
+		(l_Axe_x <= r_circle_x) &&
+		(r_Axe_x >= l_circle_x) &&
+		(u_Axe_y <= b_circle_y) &&
+		(b_Axe_y >= u_circle_y);
 
 	// Update loop
 	while (WindowShouldClose() == false)
@@ -49,6 +54,24 @@ int main()
 		else
 		{
 			//Begin Game logic
+
+			//update edges cricle and axe
+			l_circle_x = circle_x - circle_radius;
+			r_circle_x = circle_x + circle_radius;
+			u_circle_y = circle_y - circle_radius;
+			b_circle_y = circle_y + circle_radius;
+
+			l_Axe_x = axe_x;
+			r_Axe_x = axe_x + axe_length;
+			u_Axe_y = axe_y;
+			b_Axe_y = axe_y + axe_length;
+			// Update collision with axe 
+			collision_with_axe = 
+				(l_Axe_x <= r_circle_x) &&
+				(r_Axe_x >= l_circle_x) &&
+				(u_Axe_y <= b_circle_y) &&
+				(b_Axe_y >= u_circle_y);
+
 			DrawCircle(circle_x, circle_y, circle_radius, BLUE);
 			DrawRectangle(axe_x, axe_y, axe_length, axe_length, RED);
 			//Input AND moving Circle Left and Right
