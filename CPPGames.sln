@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPPGames", "CPPGames\CPPGames.vcxproj", "{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Axe_Game", "Axe_Game\Axe_Game.vcxproj", "{B7A4D8C5-AE6A-4555-9474-7D0C40386764}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dapper_Dasher", "Dapper_Dasher\Dapper_Dasher.vcxproj", "{6D146339-D7C4-417C-952B-50258CCD704C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +15,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Debug|x64.ActiveCfg = Debug|x64
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Debug|x64.Build.0 = Debug|x64
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Debug|x86.ActiveCfg = Debug|Win32
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Debug|x86.Build.0 = Debug|Win32
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Release|x64.ActiveCfg = Release|x64
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Release|x64.Build.0 = Release|x64
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Release|x86.ActiveCfg = Release|Win32
-		{571AF4AF-245E-48C6-B9D0-71C56EE30F1B}.Release|x86.Build.0 = Release|Win32
 		{B7A4D8C5-AE6A-4555-9474-7D0C40386764}.Debug|x64.ActiveCfg = Debug|x64
 		{B7A4D8C5-AE6A-4555-9474-7D0C40386764}.Debug|x64.Build.0 = Debug|x64
 		{B7A4D8C5-AE6A-4555-9474-7D0C40386764}.Debug|x86.ActiveCfg = Debug|Win32
@@ -31,6 +23,14 @@ Global
 		{B7A4D8C5-AE6A-4555-9474-7D0C40386764}.Release|x64.Build.0 = Release|x64
 		{B7A4D8C5-AE6A-4555-9474-7D0C40386764}.Release|x86.ActiveCfg = Release|Win32
 		{B7A4D8C5-AE6A-4555-9474-7D0C40386764}.Release|x86.Build.0 = Release|Win32
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Debug|x64.ActiveCfg = Debug|x64
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Debug|x64.Build.0 = Debug|x64
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Debug|x86.ActiveCfg = Debug|Win32
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Debug|x86.Build.0 = Debug|Win32
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Release|x64.ActiveCfg = Release|x64
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Release|x64.Build.0 = Release|x64
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Release|x86.ActiveCfg = Release|Win32
+		{6D146339-D7C4-417C-952B-50258CCD704C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
