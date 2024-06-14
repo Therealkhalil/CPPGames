@@ -13,16 +13,30 @@ int main()
 	UnloadImage(icon); // Unload the image after setting the icon (for ram manamgment)
 
 	//Character (Rectangle)
-	const int width{ 50 };
+	/*const int width{ 50 };
 	const int height{ 80 };
-    int posY{ windowHeight - height };
+    int posY{ windowHeight - height };*/
 
+	// Physics
     int velocity{ 0 };
-
-
 	const int jumpVelocity{ -22 };
 	const int gravity{ 1 };
     bool isInAir{ false };
+
+	//Character (Sprite)
+	Texture2D scarfy = LoadTexture("../Dapper_Dasher/textures/scarfy.png");
+	Rectangle scarfyRect;
+	Vector2 scarfyPos;
+
+	scarfyRect.x = 0;
+	scarfyRect.y = 0;
+	scarfyRect.width = scarfy.width / 6;
+	scarfyRect.height = scarfy.height;
+
+	scarfyPos.x = windowsWidth/2 - scarfyRect.width/2;
+	scarfyPos.y = windowHeight - scarfyRect.height;
+
+	//End Character Parametrs
 
 	SetTargetFPS(60);
 
@@ -33,7 +47,7 @@ int main()
 
 
 		// check if he is on the ground 
-		if (posY >= windowHeight - height) {
+		if (scarfyPos.y >= windowHeight - scarfyRect.height) {
 			velocity = 0;
 			isInAir = false;
 		}
@@ -48,11 +62,13 @@ int main()
 		}
 
 		// update position
-		posY += velocity;
+		scarfyPos.y += velocity;
 
-		DrawRectangle(windowsWidth / 2, posY, width, height, BLUE);
+		DrawTextureRec(scarfy,scarfyRect,scarfyPos,WHITE);
+
 		EndDrawing();
 	}
+	UnloadTexture(scarfy);
 	CloseWindow();
 	return 0;
 }
