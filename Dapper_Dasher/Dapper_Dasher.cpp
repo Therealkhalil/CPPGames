@@ -19,8 +19,8 @@ int main()
 
 	// Physics
     int velocity{ 0 };
-	const int jumpVelocity{ -22 };
-	const int gravity{ 1 };
+	const int jumpVelocity{ -600 }; // jumpvel : pixel per second
+	const int gravity{ 1'000 }; // gravity : (pixel/sec) per second
     bool isInAir{ false };
 
 	//Character (Sprite)
@@ -38,13 +38,16 @@ int main()
 
 	//End Character Parametrs
 
-	SetTargetFPS(60);
+	SetTargetFPS(10);
 
 	while (!WindowShouldClose()) {
 
+		//Delta time init (time since last frame)
+		const float dT{ GetFrameTime() };
+
 		BeginDrawing();
 		ClearBackground(WHITE);
-
+		
 
 		// check if he is on the ground 
 		if (scarfyPos.y >= windowHeight - scarfyRect.height) {
@@ -53,7 +56,7 @@ int main()
 		}
 		else {
 			// so he is in the air (so we add gravity)
-			velocity += gravity;
+			velocity += gravity * dT;
 			isInAir = true;
 		}
 		// check if is jumping key pressed then you will add Jumpvelocity 
@@ -62,7 +65,7 @@ int main()
 		}
 
 		// update position
-		scarfyPos.y += velocity;
+		scarfyPos.y += velocity * dT;
 
 		DrawTextureRec(scarfy,scarfyRect,scarfyPos,WHITE);
 
