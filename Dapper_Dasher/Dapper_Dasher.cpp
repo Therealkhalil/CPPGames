@@ -121,7 +121,7 @@ int main()
 			runningTimeNebula = 0;
 			nebulaRect.x = frameNebula * nebulaRect.width;
 			frameNebula++;
-			if (frameNebula > 5) {
+			if (frameNebula > 7) {
 				frameNebula = 0;
 			}
 		}
